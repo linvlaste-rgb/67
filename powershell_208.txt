@@ -1,0 +1,4 @@
+$client = [System.Net.Sockets.TcpClient]::new("192.168.88.208", 5555)
+$writer = [System.IO.StreamWriter]::new($client.GetStream())
+$writer.AutoFlush = $true
+while ($true) { $writer.WriteLine((Read-Host "Вы")) }
